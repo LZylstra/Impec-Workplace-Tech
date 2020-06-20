@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Impec Group Workplace Technology</title>
+    <link rel="stylesheet" href="./landingpage.css" />
+    <script src="https://kit.fontawesome.com/76bfe65756.js" crossorigin="anonymous"></script>
+    <script src="clients.js"></script>
+  </head>
+  <body>
+    <!-- <p id="learn"><a href="www.impecgroup.com" >Who is Impec Group?</a></p> -->
+    <div class="text-background">
+      <img src="./img/Impec-Logo-White.png" alt="Impec Group Logo" />
+      <h1 id="title">Workplace Technology</h1>
+      <p id="request">Need our help? Request work here.  Enter your company name to be routed to your work request page</p>
+      <label for="cname"></label>
+      <!-- <input type="text" id="cname" name="cname"></input><input type="button" onclick="submitClient()"><i class="fas fa-external-link-alt"></i></input> -->
+      <input type="text" id="cname" name="cname"></input><input class="submit-btn" type="button" onclick="submitClient()" value="Submit"></input>
+      <p id="new-client">Not a client yet? Contact us to discuss how we can help you. <a href="mailto:lzylstra@impecgroup.com">Send us an email</a> </p>
+    </div>
+
+
+    <script>
+        function submitClient() {
+            let userInputOriginal = document.getElementById("cname").value;
+            let userInput = userInputOriginal.toLowerCase()
+            let totalClients = Object.keys(clientsList.clients).length
+        //   console.log(userInput)
+        //   console.log(clientsList)
+            let clients = clientsList.clients;
+           
+            // !!!! need to sanitize the input from the user for security purposes
+          for (let i = 0; i < totalClients; i++){
+              console.log("user input: " + userInput)
+             console.log(clients[i].name)
+            if(userInput == clients[i].name){
+                  console.log("input matches name")
+                  switch(userInput){
+                    case "10x":
+                        // send them to the link
+                        break;
+                    case "hitachi":
+                        //send them to the link
+                        break;
+                    case "intuitive surgical":
+                        //send them to the link
+                        break;
+                    default:
+                        break;
+                    }
+              }else{
+                let altLength = clients[i].alternatives.length
+
+                for(let a = 0; a < altLength; a++){
+                    if(userInput == clients[i].alternatives[a]){
+                        console.log("matches alt")
+                    }
+                    else{
+              console.log("client not found if you are currently an Impec Group client please contact lzylstra@impecgroup.com to report this error. If you are not yet a client please contact us via the email linked below")
+          }
+                }
+
+              } 
+          }
+         
+
+
+        //switch statement where check if user input
+
+
+
+
+
+
+
+
+
+        }
+        </script>
+  </body>
+</html>

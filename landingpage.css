@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+#title {
+  font-size: 300%;
+  padding-bottom: 20px;
+}
+
+.text-background {
+  background-color: rgba(86, 89, 163, 0.75);
+  height: fit-content;
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.text-background img {
+  padding-top: 50px;
+}
+
+body {
+  background-image: url(./img/background4.jpg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 40% 20%;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+}
+
+#cname {
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 250px;
+  border: 2px solid #727376;
+  border-radius: 5px;
+  outline: none;
+}
+
+#request {
+  margin: auto;
+  padding-bottom: 20px;
+}
+
+.text-background a {
+  color: white;
+}
+
+#new-client {
+  padding-bottom: 20px;
+  margin: 0;
+}
+
+.text-background fas {
+  width: 50px;
+}
+input[type="button"] {
+  display: inline-flex;
+  align-items: center;
+}
+
+.submit-btn {
+  box-shadow: inset 0px 1px 0px 0px #727376;
+  background: linear-gradient(to bottom, #faa53e 5%, #cc760c 100%);
+  background-color: #faa53e;
+  border-radius: 7px;
+  border: 1px solid #5659a3;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 16px;
+  padding: 9px 37px;
+  text-decoration: none;
+  text-shadow: 0px 1px 1px #262262;
+}
+.submit-btn:hover {
+  background: linear-gradient(to bottom, #cc760c 5%, #faa53e 100%);
+  background-color: #cc760c;
+}
+.submit-btn:active {
+  position: relative;
+  top: 1px;
+}
+
+/* .submit-btn {
+  box-shadow: inset 0px 1px 0px 0px #6b63ff;
+  background: linear-gradient(to bottom, #2d2d2e 5%, #262262 100%);
+  background-color: #2d2d2e;
+  border-radius: 7px;
+  border: 1px solid #5659a3;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 16px;
+  padding: 9px 37px;
+  text-decoration: none;
+  text-shadow: 0px 1px 1px #262262;
+}
+.submit-btn:hover {
+  background: linear-gradient(to bottom, #262262 5%, #2d2d2e 100%);
+  background-color: #262262;
+}
+.submit-btn:active {
+  position: relative;
+  top: 1px;
+} */
+
+@media only screen and (max-width: 300px) {
+  #cname {
+    width: auto;
+  }
+}
+
+@media only screen and (min-width: 490px) {
+  #request {
+    width: 480px;
+  }
+}
+
+@media only screen and (min-width: 880px) {
+  .text-background {
+    height: 500px;
+    width: 800px;
+    margin-top: 50px;
+  }
+}
+
+@media only screen and (min-width: 1230px) {
+  body {
+    background-size: cover;
+  }
+}

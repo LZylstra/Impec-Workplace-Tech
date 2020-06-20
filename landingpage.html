@@ -16,7 +16,9 @@
       <p id="request">Need our help? Request work here.  Enter your company name to be routed to your work request page</p>
       <label for="cname"></label>
       <!-- <input type="text" id="cname" name="cname"></input><input type="button" onclick="submitClient()"><i class="fas fa-external-link-alt"></i></input> -->
-      <input type="text" id="cname" name="cname"></input><input class="submit-btn" type="button" onclick="submitClient()" value="Submit"></input>
+      <input type="text" id="cname" name="cname" onclick="resubmit()"></input><input class="submit-btn" type="button" onclick="submitClient()" value="Submit"></input>
+      <div id="client-not-found" style="visibility: hidden;">Client not found. If you are currently an Impec Group client please contact lzylstra@impecgroup.com to report this error. If you are not yet a client please contact us via the email linked below</div>
+      
       <p id="new-client">Not a client yet? Contact us to discuss how we can help you. <a href="mailto:lzylstra@impecgroup.com">Send us an email</a> </p>
     </div>
 
@@ -25,58 +27,47 @@
         function submitClient() {
             let userInputOriginal = document.getElementById("cname").value;
             let userInput = userInputOriginal.toLowerCase()
-            let totalClients = Object.keys(clientsList.clients).length
-        //   console.log(userInput)
-        //   console.log(clientsList)
-            let clients = clientsList.clients;
-           
-            // !!!! need to sanitize the input from the user for security purposes
-          for (let i = 0; i < totalClients; i++){
-              console.log("user input: " + userInput)
-             console.log(clients[i].name)
-            if(userInput == clients[i].name){
-                  console.log("input matches name")
-                  switch(userInput){
-                    case "10x":
-                        // send them to the link
-                        break;
-                    case "hitachi":
-                        //send them to the link
-                        break;
-                    case "intuitive surgical":
-                        //send them to the link
-                        break;
-                    default:
-                        break;
-                    }
-              }else{
-                let altLength = clients[i].alternatives.length
 
-                for(let a = 0; a < altLength; a++){
-                    if(userInput == clients[i].alternatives[a]){
-                        console.log("matches alt")
-                    }
-                    else{
-              console.log("client not found if you are currently an Impec Group client please contact lzylstra@impecgroup.com to report this error. If you are not yet a client please contact us via the email linked below")
-          }
-                }
+            let url = checkInput(userInput);
 
-              } 
-          }
-         
-
-
-        //switch statement where check if user input
-
-
-
-
-
-
-
-
+            if (url != ""){
+                document.write("Redirecting to your work request page in 3 seconds..."); 
+                setTimeout(function(){window.location = url;}, 3000)
+            }
+            else{
+                document.getElementById("client-not-found").style.visibility="visible";
+            }
 
         }
+
+        function checkInput(userInput){
+            let totalClients = Object.keys(clientsList.clients).length;
+            let clients = clientsList.clients;
+            let url = "";
+
+            for (let i = 0; i < totalClients; i++){
+                if(userInput == clients[i].name){
+                  url = clients[i].url
+                }
+                else{
+                    let altLength = clients[i].alternatives.length
+                    for(let a = 0; a < altLength; a++){
+                        if(userInput == clients[i].alternatives[a]){
+                            url = clients[i].url
+                        }
+                    }
+                }
+            }
+            return url;
+        }
+
+        function resubmit(){
+            let status = document.getElementById("client-not-found").style.visibility;
+            if (status == "visible"){
+                document.getElementById("client-not-found").style.visibility="hidden";
+            }
+        }
+
         </script>
   </body>
 </html>

@@ -28,7 +28,7 @@ body {
 
 #cname {
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   width: 250px;
   border: 2px solid #727376;
   border-radius: 5px;
@@ -44,14 +44,15 @@ body {
   color: white;
 }
 
+#client-not-found {
+  color: #faa63e;
+}
+
 #new-client {
   padding-bottom: 20px;
   margin: 0;
 }
 
-.text-background fas {
-  width: 50px;
-}
 input[type="button"] {
   display: inline-flex;
   align-items: center;
@@ -119,9 +120,13 @@ input[type="button"] {
 
 @media only screen and (min-width: 880px) {
   .text-background {
-    height: 500px;
+    /* height: 500px; */
     width: 800px;
     margin-top: 50px;
+  }
+
+  #client-not-found {
+    padding-bottom: 10px;
   }
 }
 

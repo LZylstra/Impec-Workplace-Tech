@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Impec Group Workplace Technology</title>
     <link rel="stylesheet" href="./index.css" />
-    <script src="https://kit.fontawesome.com/76bfe65756.js" crossorigin="anonymous"></script>
     <script src="clients.js"></script>
   </head>
   <body>
@@ -16,7 +15,6 @@
       <h1 id="title">Workplace Technology</h1>
       <p id="request">Need our help? Request work here.  Enter your company name to be routed to your work request page</p>
       <label for="cname"></label>
-      <!-- <input type="text" id="cname" name="cname"></input><input type="button" onclick="submitClient()"><i class="fas fa-external-link-alt"></i></input> -->
       <input type="text" id="cname" name="cname" onclick="resubmit()"></input><input class="submit-btn" type="button" onclick="submitClient()" value="Submit"></input>
       <div id="client-not-found" style="visibility: hidden;">Client not found. If you are currently an Impec Group client please contact lzylstra@impecgroup.com to report this error. If you are not yet a client please contact us via the email linked below</div>
       
@@ -27,23 +25,28 @@
 
 
     <script>
+        /* Gets the user input and redirects the user to their work request page */
         function submitClient() {
             let userInputOriginal = document.getElementById("cname").value;
-            let userInput = userInputOriginal.toLowerCase()
+
+            //Clean up the user input
+            let userInput = encodeURIComponent(userInputOriginal.toLowerCase())
 
             let url = checkInput(userInput);
 
+            // If the url is not blank redirect the user
             if (url != ""){
                 document.write("Redirecting to your work request page in 3 seconds..."); 
                 setTimeout(function(){window.location = url;}, 3000)
             }
             else{
+                // if the url was blank then the company was not found, display the error message
                 document.getElementById("client-not-found").style.visibility="visible";
             }
 
         }
 
-        // need to sanitize the input and upload this so it has a decent url
+        /* Check if user input company name matches any of our existing clients and returns the url */
         function checkInput(userInput){
             let totalClients = Object.keys(clientsList.clients).length;
             let clients = clientsList.clients;
@@ -65,6 +68,7 @@
             return url;
         }
 
+        /* Resets the error message after a user goes back to the text box  */
         function resubmit(){
             let status = document.getElementById("client-not-found").style.visibility;
             if (status == "visible"){

@@ -30,7 +30,7 @@
             let userInputOriginal = document.getElementById("cname").value;
 
             //Clean up the user input
-            let userInput = encodeURIComponent(userInputOriginal.toLowerCase())
+            let userInput = encodeURIComponent(userInputOriginal.toLowerCase()).replace("%20", " ")
 
             let url = checkInput(userInput);
 

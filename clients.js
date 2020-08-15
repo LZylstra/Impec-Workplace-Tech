@@ -3,7 +3,7 @@ var clientsList = {
     {
       name: "10x",
       url: "https://app.limblecmms.com/#!/loc-problem/rrzag31130/10191",
-      alternatives: ["10 x"],
+      alternatives: ["10 x", "10x genomics", "10 x genomics"],
     },
     {
       name: "hitachi",
@@ -23,12 +23,12 @@ var clientsList = {
     {
       name: "liveramp",
       url: "https://app.limblecmms.com/#!/loc-problem/rrzag31130/10181",
-      alternatives: [""],
+      alternatives: [],
     },
     {
       name: "mozilla",
       url: "https://app.limblecmms.com/#!/loc-problem/rrzag31130/10179",
-      alternatives: [""],
+      alternatives: [],
     },
     {
       name: "pacific biosciences",
@@ -68,7 +68,7 @@ var clientsList = {
     {
       name: "snowflake",
       url: "https://app.limblecmms.com/#!/loc-problem/rrzag31130/10180",
-      alternatives: [""],
+      alternatives: [],
     },
     {
       name: "sony",
@@ -83,7 +83,7 @@ var clientsList = {
     {
       name: "teamwerc",
       url: "https://app.limblecmms.com/#!/loc-problem/rrzag31130/10352",
-      alternatives: [""],
+      alternatives: [],
     },
     {
       name: "thermo",
@@ -104,12 +104,27 @@ var clientsList = {
     {
       name: "waymo",
       url: "https://app.limblecmms.com/#!/loc-problem/rrzag31130/8579",
-      alternatives: [""],
+      alternatives: [],
     },
     {
       name: "impec group",
       url: "https://app.limblecmms.com/#!/loc-problem/rrzag31130/7508",
       alternatives: ["impec", "ig"],
+    },
+    {
+      name: "catalyst",
+      url: "https://app.limblecmms.com/#!/loc-problem/rrzag31130/11270",
+      alternatives: [],
+    },
+    {
+      name: "teamwerc",
+      url: "https://app.limblecmms.com/#!/loc-problem/rrzag31130/10352",
+      alternatives: [],
+    },
+    {
+      name: "tibco",
+      url: "https://app.limblecmms.com/#!/loc-problem/rrzag31130/10351",
+      alternatives: ["tibco software"],
     },
   ],
 };

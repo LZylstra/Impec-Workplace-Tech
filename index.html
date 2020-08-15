@@ -13,12 +13,14 @@
     <div class="text-background">
       <img src="./img/Impec-Logo-White.png" alt="Impec Group Logo" />
       <h1 id="title">Workplace Technology</h1>
-      <p id="request">Need our help? Request work here.  Enter your company name to be routed to your work request page</p>
+      <p id="request">Need our help? Request work here. </p>  
+      <!-- Enter your company name to be routed to your work request page</p> -->
       <label for="cname"></label>
-      <input type="text" id="cname" name="cname" onclick="resubmit()"></input><input class="submit-btn" type="button" onclick="submitClient()" value="Submit"></input>
-      <div id="client-not-found" style="visibility: hidden;">Client not found. If you are currently an Impec Group client please contact lzylstra@impecgroup.com to report this error. If you are not yet a client please contact us via the email linked below</div>
+      <input type="text" id="cname" name="cname" placeholder="Your Company Name" onclick="resubmit()"></input><input class="submit-btn" type="button" onclick="submitClient()" value="Submit"></input>
+      <div id="client-not-found" style="visibility: hidden;">Client not found. If you are currently an Impec Group client please contact us to report this error. If you are not yet a client please contact us via the email linked below</div>
+      <!-- <div id="client-not-found" style="visibility: hidden;">Client not found. If you are currently an Impec Group client please contact lzylstra@impecgroup.com to report this error. If you are not yet a client please contact us via the email linked below</div> -->
       
-      <p id="new-client">Not a client yet? Contact us to discuss how we can help you. <a href="mailto:lzylstra@impecgroup.com">Send us an email</a> </p>
+      <p id="new-client">Not a client yet? Contact us to discuss how we can help you. <a href="mailto:wpt@impecgroup.com">Send us an email</a> </p>
     
     <div class = "blur"></div>
     </div>
@@ -36,8 +38,8 @@
 
             // If the url is not blank redirect the user
             if (url != ""){
-                document.write("Redirecting to your work request page in 3 seconds..."); 
-                setTimeout(function(){window.location = url;}, 3000)
+                document.write("Redirecting to your work request page..."); 
+                setTimeout(function(){window.location = url;}, 0)
             }
             else{
                 // if the url was blank then the company was not found, display the error message

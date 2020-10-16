@@ -63,7 +63,7 @@ var clientsList = {
     {
       name: "servicenow",
       url: "https://app.limblecmms.com/#!/loc-problem/rrzag31130/10350",
-      alternatives: ["sn"],
+      alternatives: ["sn", "service now"],
     },
     {
       name: "snowflake",
@@ -122,9 +122,24 @@ var clientsList = {
       alternatives: [],
     },
     {
-      name: "tibco",
-      url: "https://app.limblecmms.com/#!/loc-problem/rrzag31130/10351",
-      alternatives: ["tibco software"],
+      name: "alerus",
+      url: "https://app.limblecmms.com/#!/loc-problem/rrzag31130/11677",
+      alternatives: ["alerus financial"],
+    },
+    {
+      name: "brex",
+      url: "https://app.limblecmms.com/#!/loc-problem/rrzag31130/12097",
+      alternatives: [],
+    },
+    {
+      name: "catalyst",
+      url: "https://app.limblecmms.com/#!/loc-problem/rrzag31130/11270",
+      alternatives: [],
+    },
+    {
+      name: "hello office",
+      url: "https://app.limblecmms.com/#!/loc-problem/rrzag31130/10352",
+      alternatives: ["hellooffice"],
     },
   ],
 };
